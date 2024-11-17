@@ -1,11 +1,11 @@
-FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
+FROM nvidia/cuda:12.6.2-devel-ubuntu24.04
 
 # ARG DEBIAN_FRONTEND=noninteractive
 
 RUN echo run with apt-get && \
     echo ---------------- && \
     apt-get update && apt-get install -y gdb gdbserver rsync zip git vim nano \
-    make openssh-server ninja-build libboost-all-dev googletest libgmock-dev && \
+    make openssh-server ninja-build libboost-all-dev googletest libgmock-dev gcc-13-x86-64-linux-gnu && \
     echo
 
 RUN echo install cmake && \
